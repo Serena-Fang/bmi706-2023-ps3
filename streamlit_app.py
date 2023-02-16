@@ -98,7 +98,7 @@ ages = [
 
 chart = alt.Chart(subset).mark_rect().encode(
     x=alt.X("Age", sort=ages),
-    y="Country",
+    y=alt.Y("Country"),
     color=alt.color("Rate", title="Mortality rate per 100k"),
     tooltip=["Rate"],
 ).properties(
