@@ -105,10 +105,13 @@ ages = [
 #     title=f"{cancer} mortality rates for {'males' if sex == 'M' else 'females'} in {year}",
 # )
 
+rate_scale = alt.Scale(domain=[subset['Rate'].min(), subset['Rate'].max()], type='log')
+rate_color = alt.Color(field="Rate", type="quantitative", scale=rate_scale, title="Mortality rate per 100k")
+
 chart = alt.Chart(subset).mark_rect().encode(
     x=alt.X("Age", sort=ages),
     y=alt.Y("Country:N"),
-    color = alt.Color('Rate:Q', scale=alt.Scale(type='log'), title="Mortality rate per 100k")
+    color = rate_color
 )
 
 ### P2.5 ###
