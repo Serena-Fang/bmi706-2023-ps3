@@ -120,7 +120,8 @@ chart1 = alt.Chart(subset).mark_rect().encode(
 
 chart2 = alt.Chart(subset).mark_bar().encode(
     x=alt.X('Pop:Q', title='Sum of population size'),
-    y='Country:N',
+    y='Country:N'
+).properties(
     width = 600, height = 300
 )
 
