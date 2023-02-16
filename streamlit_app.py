@@ -41,7 +41,7 @@ df = load_data()
 ### P1.2 ###
 
 
-st.write("## Age-specific cancer mortality rates")
+st.write("## Age-specific cancer mortality rate")
 
 ### P2.1 ###
 # replace with st.slider
