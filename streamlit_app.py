@@ -114,15 +114,12 @@ chart1 = alt.Chart(subset).mark_rect().encode(
     color = rate_color,
     tooltip=["Rate"],
 ).properties(
-    title=f"{cancer} mortality rates for {'males' if sex == 'M' else 'females'} in {year}",
-    width = 600, height = 300
+    title=f"{cancer} mortality rates for {'males' if sex == 'M' else 'females'} in {year}"
 )
 
 chart2 = alt.Chart(subset).mark_bar().encode(
     x=alt.X('Pop:Q', title='Sum of population size'),
     y='Country:N'
-).properties(
-    width = 600, height = 300
 )
 
 # chart = alt.vconcat(chart1,chart2)
