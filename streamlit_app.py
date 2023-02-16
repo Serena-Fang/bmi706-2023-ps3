@@ -108,7 +108,7 @@ ages = [
 chart = alt.Chart(subset).mark_rect().encode(
     x=alt.X("Age", sort=ages),
     y=alt.Y("Country:N"),
-    color = alt.Color('Rate:Q')
+    color = alt.Color('Rate:Q', title="Mortality rate per 100k")
 )
 
 ### P2.5 ###
