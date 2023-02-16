@@ -96,14 +96,21 @@ ages = [
     "Age >64",
 ]
 
+# chart = alt.Chart(subset).mark_rect().encode(
+#     x=alt.X("Age", sort=ages),
+#     y=alt.Y("Country"),
+#     color=alt.color("Rate", title="Mortality rate per 100k"),
+#     tooltip=["Rate"],
+# ).properties(
+#     title=f"{cancer} mortality rates for {'males' if sex == 'M' else 'females'} in {year}",
+# )
+
 chart = alt.Chart(subset).mark_rect().encode(
     x=alt.X("Age", sort=ages),
-    y=alt.Y("Country"),
-    color=alt.color("Rate", title="Mortality rate per 100k"),
-    tooltip=["Rate"],
-).properties(
-    title=f"{cancer} mortality rates for {'males' if sex == 'M' else 'females'} in {year}",
+    y=alt.Y("Country:N"),
+    color = alt.Color('Rate:Q')
 )
+
 ### P2.5 ###
 
 st.altair_chart(chart, use_container_width=True)
