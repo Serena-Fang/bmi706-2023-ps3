@@ -108,7 +108,7 @@ ages = [
 rate_scale = alt.Scale(domain=[0.01, 1000], clamp=True, type='log')
 rate_color = alt.Color(field="Rate", type="quantitative", scale=rate_scale, title="Mortality rate per 100k")
 
-chart = alt.Chart(subset).mark_rect().encode(
+chart1 = alt.Chart(subset).mark_rect().encode(
     x=alt.X("Age", sort=ages),
     y=alt.Y("Country:N"),
     color = rate_color,
@@ -117,6 +117,12 @@ chart = alt.Chart(subset).mark_rect().encode(
     title=f"{cancer} mortality rates for {'males' if sex == 'M' else 'females'} in {year}",
 )
 
+chart2 = alt.Chart(subset).mark_bar().encode(
+    x=alt.X('Pop:Q', title='Sum of population size'),
+    y='Country:N'
+)
+
+chart = alt.vconcat(chart1,chart2)
 
 ### P2.5 ###
 
