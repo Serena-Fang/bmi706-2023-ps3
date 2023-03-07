@@ -15,3 +15,5 @@ ym_slider = st.slider('Year_Month', min(df['year_month']), max(df['year_month'])
 
 st.write("## Association between Vaccination Rate and Number of Covid Cases")
 
+state_selectbox = st.selectbox(
+    "State", tuple(df["states"].unique()))
