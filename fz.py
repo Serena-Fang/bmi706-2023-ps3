@@ -28,8 +28,6 @@ scatter = alt.Chart(df5).mark_circle().encode(
     title='Vaccination Rate and COVID-19 Cases'
 ).interactive()
 
-st.altair_chart(scatter, use_container_width=True)
-
 scatter1 = alt.Chart(df5).mark_circle().encode(
     x=alt.X('percent_insured:Q', scale=alt.Scale(domain=[75, 100]), title = 'Percent Insured'),
     y=alt.Y('deaths_k:Q', title = 'Number of Deaths (thousands)'),
@@ -38,4 +36,9 @@ scatter1 = alt.Chart(df5).mark_circle().encode(
     title='Vaccination Rate and COVID-19 Deaths'
 ).interactive()
 
-st.altair_chart(scatter1, use_container_width=True)
+col1, col2 = st.columns(2)
+with col1:
+    st.altair_chart(scatter, use_container_width=True)
+
+with col2:
+    st.altair_chart(scatter1, use_container_width=True)
