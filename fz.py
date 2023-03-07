@@ -26,9 +26,11 @@ scatter = alt.Chart(df5).mark_circle().encode(
     tooltip=['state','percent_insured','cases_k']
 ).properties(
     title='Vaccination Rate and COVID-19 Cases'
-).transform_regression('percent_insured', 'cases_k').interactive()
+).interactive()
 
-st.altair_chart(scatter, use_container_width=True)
+line = scatter.transform_regression('percent_insured', 'cases_k').mark_line()
+
+st.altair_chart(scatter+line, use_container_width=True)
 
 scatter1 = alt.Chart(df5).mark_circle().encode(
     x=alt.X('percent_insured:Q', scale=alt.Scale(domain=[75, 100]), title = 'Percent Insured'),
