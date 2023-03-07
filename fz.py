@@ -18,5 +18,5 @@ st.write("## Association between Vaccination Rate and Number of Covid Cases")
 
 # state_filtered = df[df['state'] == state_selectbox]
 
-df5 = df[(df['year_month'] == ym_slider)]
+df5 = df1[(df1['new_date'] == ym_slider)]
 
