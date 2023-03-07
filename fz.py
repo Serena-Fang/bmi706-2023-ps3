@@ -21,7 +21,7 @@ st.write("## Association between Insurance Rate and Number of Covid Cases")
 df5 = df1[df1['new_date'] == ym_slider]
 
 scatter = alt.Chart(df5).mark_circle().encode(
-    x=alt.X('percent_insured:Q', scale=alt.Scale(domain=[75, 100]), title = 'Percent Insured'),
+    x=alt.X('percent_vaccinated:Q', scale=alt.Scale(domain=[75, 100]), title = 'Percent Insured'),
     y=alt.Y('cases_k:Q', title = 'Number of Cases (thousands)'),
     tooltip=['state','percent_insured','cases_k']
 ).properties(
@@ -29,7 +29,7 @@ scatter = alt.Chart(df5).mark_circle().encode(
 ).interactive()
 
 scatter1 = alt.Chart(df5).mark_circle().encode(
-    x=alt.X('percent_insured:Q', scale=alt.Scale(domain=[75, 100]), title = 'Percent Insured'),
+    x=alt.X('percent_vaccinated:Q', scale=alt.Scale(domain=[75, 100]), title = 'Percent Insured'),
     y=alt.Y('deaths_k:Q', title = 'Number of Deaths (thousands)'),
     tooltip=['state','percent_insured','deaths_k']
 ).properties(
