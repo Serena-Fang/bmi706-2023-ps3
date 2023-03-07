@@ -26,7 +26,7 @@ scatter = alt.Chart(df5).mark_point().encode(
     tooltip=['state','percent_insured','cases_k']
 ).properties(
     title='Vaccination Rate and COVID-19 Cases'
-)
+).interactive()
 
 st.altair_chart(scatter, use_container_width=True)
 
@@ -36,6 +36,6 @@ scatter1 = alt.Chart(df5).mark_point().encode(
     tooltip=['state','percent_insured','deaths_k']
 ).properties(
     title='Vaccination Rate and COVID-19 Deaths'
-)
+).interactive()
 
 st.altair_chart(scatter1, use_container_width=True)
