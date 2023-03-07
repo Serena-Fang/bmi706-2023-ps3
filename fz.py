@@ -14,7 +14,7 @@ df1 = pd.read_csv('data_month.csv')
 default_ym = 202003
 ym_slider = st.slider('Year_Month', min(df1['new_date']), max(df1['new_date']), value=default_ym)
 
-st.write("## Association between Vaccination Rate and Number of Covid Cases")
+st.write("## Association between Insurance Rate and Number of Covid Cases")
 
 # state_filtered = df[df['state'] == state_selectbox]
 
@@ -25,7 +25,7 @@ scatter = alt.Chart(df5).mark_circle().encode(
     y=alt.Y('cases_k:Q', title = 'Number of Cases (thousands)'),
     tooltip=['state','percent_insured','cases_k']
 ).properties(
-    title='Vaccination Rate and COVID-19 Cases'
+    title='Insured Rate and COVID-19 Cases'
 ).interactive()
 
 scatter1 = alt.Chart(df5).mark_circle().encode(
@@ -33,7 +33,7 @@ scatter1 = alt.Chart(df5).mark_circle().encode(
     y=alt.Y('deaths_k:Q', title = 'Number of Deaths (thousands)'),
     tooltip=['state','percent_insured','deaths_k']
 ).properties(
-    title='Vaccination Rate and COVID-19 Deaths'
+    title='Insured Rate and COVID-19 Deaths'
 ).interactive()
 
 col1, col2 = st.columns(2)
