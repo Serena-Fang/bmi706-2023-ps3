@@ -28,7 +28,7 @@ scatter = alt.Chart(df5).mark_circle().encode(
     title='Vaccination Rate and COVID-19 Cases'
 ).interactive()
 
-line = scatter.transform_regression('percent_insured', 'cases_k').mark_line()
+line = scatter.transform_regression('percent_insured:Q', 'cases_k:Q').mark_line()
 
 st.altair_chart(scatter+line, use_container_width=True)
 
