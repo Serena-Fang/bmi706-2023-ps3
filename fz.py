@@ -21,7 +21,7 @@ st.write("## Association between Vaccination Rate and Number of Covid Cases")
 df5 = df1[df1['new_date'] == ym_slider]
 
 scatter = alt.Chart(df5).mark_point().encode(
-    x='percent_insured:Q',
+    x=alt.X('percent_insured:Q', scale=alt.Scale(domain=[70, 100])),
     y='cases_k:Q',
     tooltip=['state','percent_insured','cases_k']
 ).properties(
@@ -31,7 +31,7 @@ scatter = alt.Chart(df5).mark_point().encode(
 st.altair_chart(scatter, use_container_width=True)
 
 scatter1 = alt.Chart(df5).mark_point().encode(
-    x='percent_insured:Q',
+    x=alt.X('percent_insured:Q', scale=alt.Scale(domain=[70, 100])),
     y='deaths_k:Q',
     tooltip=['state','percent_insured','deaths_k']
 ).properties(
