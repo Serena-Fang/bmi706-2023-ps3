@@ -23,7 +23,7 @@ df5 = df1[df1['new_date'] == ym_slider]
 scatter = alt.Chart(df5).mark_point().encode(
     x='percent_insured:Q',
     y='cases_k:Q',
-    tooltip=['x', 'y', 'state']
+    tooltip=['state','percent_insured','cases_k']
 ).properties(
     title='Vaccination Rate and COVID-19 Cases'
 )
